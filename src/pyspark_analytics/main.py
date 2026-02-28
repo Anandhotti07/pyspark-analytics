@@ -31,7 +31,7 @@ agg_df = df.groupBy("category") \
                 avg("amount").alias("avg_sales"),
                 count("*").alias("order_count"))
 
-# 2️⃣ Wind    ow       Function - Running Total by Category
+# 2️⃣ Wi  Function - Running Total by Category
 window_spec = Window.partitionBy("category") \
                     .orderBy("order_date") \
                     .rowsBetween(Window.unboundedPreceding, Window.currentRow)
