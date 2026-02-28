@@ -25,7 +25,7 @@ df = spark.createDataFrame(data, columns)
 #  Convert to proper date type
 df = df.withColumn("order_date", to_date(col("order_date"), "yyyy-MM-dd"))
 
-# 1️⃣ Basic Aggregation
+#           Basic Aggregation
 agg_df = df.groupBy("category") \
            .agg(sum("amount").alias("total_sales"),
                 avg("amount").alias("avg_sales"),
