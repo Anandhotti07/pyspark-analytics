@@ -22,7 +22,7 @@ columns = ["order_id", "order_date", "category", "amount", "city"]
 
 df = spark.createDataFrame(data, columns)
 
-# Convert to proper date type
+#  Convert to proper date type
 df = df.withColumn("order_date", to_date(col("order_date"), "yyyy-MM-dd"))
 
 # 1️⃣ Basic Aggregation
