@@ -39,7 +39,7 @@ window_spec = Window.partitionBy("category") \
 df = df.withColumn("running_total",
                    sum("amount").over(window_spec))
 
-# 3️⃣ Ranking within Category
+# 3️⃣   Ranking within Category
 rank_window = Window.partitionBy("category").orderBy(desc("amount"))
 
 df = df.withColumn("rank_in_category",
